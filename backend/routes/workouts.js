@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 // GET all workouts
-router.get("/", getWorkouts)
+router.get("/data", getWorkouts)
 
 // GET a single workout
 router.get("/:id", getSingleWorkout)
