@@ -28,13 +28,13 @@ const Home = () => {
 
         fetchWorkouts()
 
-    }, [])
+    }, [dispatch])
 
     return (
         <div className="home">
             <div className="workouts">
-                {workouts && workouts.map((workout) => (
-                    <WorkoutDetails key={workout._id} workout={workout} />
+                {workouts && workouts.map((workouts) => (
+                    <WorkoutDetails key={workouts._id} workout={workouts} />
                     // <p key={workout._id}> {workout.title}</p>
                     
                 ))}
