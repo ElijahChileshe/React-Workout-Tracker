@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useWorkoutsContext } from "../hooks/useWorkoutContext";
 
 // Components
 import WorkoutDetails from "../components/WorkoutDetails";
@@ -6,7 +7,8 @@ import WorkoutForm from "../components/WorkoutForm";
 
 const Home = () => {
 
-    const [workouts, setWorkouts] = useState(null)
+    // const [workouts, setWorkouts] = useState(null)
+    const {workouts, dispatch} = useWorkoutsContext()
 
     // Fetch workouts with UE Hook
     useEffect(() => {
@@ -19,7 +21,8 @@ const Home = () => {
 
             // Check if response is ok
             if(response.ok) {
-                setWorkouts(json)
+                // setWorkouts(json)
+                dispatch({type: "SET_WORKOUTS", payload: json})
             }
         }
 
